@@ -1,0 +1,3 @@
+sudo pacman -S --needed clang lld lldb cmake make gdb valgrind
+
+

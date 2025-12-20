@@ -1,0 +1,276 @@
+====================================================================
+ROADMAP & PETA KEAHLIAN MASTER C PROGRAMMING LANGUAGE
+====================================================================
+
+Tujuan:
+Menjadi MASTER C yang mampu bekerja di:
+- Android NDK & JNI
+- Cybersecurity & Hacking
+- Reverse Engineering
+- Digital Forensics
+- Game Development
+- IoT / Embedded
+- Native Library / DLL / SO
+
+====================================================================
+DEFINISI OBJEKTIF "MASTER C"
+====================================================================
+
+Seseorang disebut MASTER C jika ia mampu:
+1. Memprediksi perilaku program tanpa menjalankan
+2. Menjelaskan crash dari memory / stack saja
+3. Menulis C yang aman DAN sengaja berbahaya (untuk security)
+4. Membaca source, assembly, dan binary
+5. Mengendalikan konsekuensi kode tanpa safety net
+
+Jika masih:
+- "coba run dulu"
+- "kok segfault?"
+- "pointer ini ke mana?"
+
+Maka BELUM MASTER C.
+
+====================================================================
+LEVEL 1 — BEGINNER (BAHASA, BUKAN C SESUNGGUHNYA)
+====================================================================
+
+Ini adalah pintu masuk, BUKAN fondasi.
+
+1. Syntax & Control Flow
+   - if / else / switch
+   - for / while / do
+   - operator & precedence
+
+2. Tipe Data Dasar
+   - char, int, long, float, double
+   - signed vs unsigned
+   - implicit conversion
+   - overflow dasar
+
+3. Function & Scope
+   - parameter passing (by value)
+   - return value
+   - local vs global
+   - static function
+
+OUTPUT LEVEL BEGINNER:
+- Bisa compile & run
+- Bisa buat program kecil
+- BELUM paham memory
+- BELUM C engineer
+
+====================================================================
+LEVEL 2 — INTERMEDIATE (INI BARU "C")
+====================================================================
+
+Di level ini 80% orang gagal.
+
+4. MEMORY MODEL (GERBANG UTAMA)
+   - Stack vs Heap
+   - Storage duration
+   - Lifetime objek
+   - Automatic / static / dynamic
+   - Dangling reference
+
+Tanpa ini, SEMUA DOMAIN AKAN RUNTUH.
+
+5. POINTER (INTI C)
+   - Pointer vs array
+   - Pointer arithmetic
+   - Pointer to pointer
+   - Pointer aliasing
+   - const correctness
+   - Wild pointer & dangling pointer
+
+Jika pointer belum refleks di kepala, TIDAK BOLEH LANJUT.
+
+6. ARRAY, STRING, BUFFER
+   - Array decay
+   - Null-terminated string
+   - strlen vs sizeof
+   - Buffer overflow
+   - Off-by-one error
+
+(Fondasi cybersecurity)
+
+7. STRUCT, UNION, MEMORY LAYOUT
+   - Padding
+   - Alignment
+   - sizeof(struct)
+   - Layout antar arsitektur
+   - Union reinterpretation
+
+(Fondasi reverse engineering & forensik)
+
+8. DYNAMIC MEMORY MANAGEMENT
+   - malloc / calloc / realloc / free
+   - Ownership
+   - Memory leak
+   - Double free
+   - Use-after-free
+
+9. HEADER & MODULARISASI
+   - .h vs .c
+   - Include guard
+   - Forward declaration
+   - Linking dasar
+
+OUTPUT LEVEL INTERMEDIATE:
+- Bisa debug segfault
+- Bisa menulis C tanpa leak
+- Bisa menjelaskan UB sederhana
+- Sudah C engineer pemula
+
+====================================================================
+LEVEL 3 — EXPERT / ADVANCED (C SESUNGGUHNYA)
+====================================================================
+
+Level engineer sistem, security, engine, RE.
+
+10. UNDEFINED BEHAVIOR (MASTER LEVEL)
+    - Strict aliasing
+    - Signed overflow
+    - Out-of-bounds read/write
+    - Uninitialized read
+    - Lifetime violation
+
+(Akar exploit & bug paling berbahaya)
+
+11. COMPILER & TOOLCHAIN REALITY
+    - Preprocessing
+    - Compilation
+    - Linking
+    - Optimization (-O0 vs -O2)
+    - Reordering & inlining
+
+12. ABI & CALLING CONVENTION
+    - Stack frame
+    - Register usage
+    - Function prologue / epilogue
+    - Parameter passing
+
+(Kunci NDK, JNI, exploit, RE)
+
+13. DEBUGGING & BINARY INSIGHT
+    - gdb (stack, frame, memory)
+    - objdump
+    - readelf
+    - symbol table
+    - disassembly reading
+
+14. STACK & HEAP INTERNALS
+    - Stack canary
+    - Heap allocator behavior
+    - Heap metadata
+    - ASLR awareness
+
+15. OS & SYSTEM INTERACTION
+    - File descriptor
+    - Syscall
+    - Process vs thread
+    - mmap
+    - signals
+
+16. BINARY FORMAT
+    - ELF / PE dasar
+    - Section vs segment
+    - GOT / PLT
+    - Relocation
+
+17. CROSS-LANGUAGE & ABI BOUNDARY
+    - C ↔ Java/Kotlin (JNI)
+    - C ↔ C++
+    - Shared library (.so / .dll)
+    - ABI compatibility
+
+OUTPUT LEVEL EXPERT:
+- Bisa membaca assembly
+- Bisa membaca binary stripped
+- Bisa menulis native library stabil
+- Bisa menjelaskan exploit
+- MASTER C secara teknis
+
+====================================================================
+HAL NON-TEKNIS WAJIB UNTUK MASTER C
+====================================================================
+
+18. Mental Model Mesin
+    - Berpikir dalam byte, register, cache
+    - Bukan dalam syntax
+
+19. Predictability
+    - Tidak "coba run"
+    - Bisa prediksi efek kode
+
+20. Disiplin Terhadap Warning & UB
+    - Warning = error
+    - Tidak mengandalkan kebetulan
+
+21. Boundary Awareness
+    - Function boundary
+    - Module boundary
+    - ABI boundary
+    - User ↔ kernel boundary
+
+22. Kematangan Teknik
+    - Kode sederhana > kode pintar
+    - Minim surface bug
+    - Bisa dibaca 10 tahun ke depan
+
+====================================================================
+TITIK FUNDAMENTAL C YANG SESUNGGUHNYA
+====================================================================
+
+Bukan:
+- Syntax
+- Loop
+- Pointer semata
+- malloc semata
+
+TITIK FUNDAMENTAL C ADALAH:
+
+1. MEMORY
+   Di mana data berada
+
+2. LIFETIME
+   Berapa lama data hidup
+
+3. UNDEFINED BEHAVIOR
+   Apa yang terjadi jika aturan dilanggar
+
+4. TANGGUNG JAWAB PENUH
+   Tidak ada safety net, tidak ada runtime guard
+
+Jika 4 hal ini refleks di kepala:
+- Android NDK/JNI masuk
+- Reverse engineering natural
+- Cybersecurity logis
+- Digital forensics masuk akal
+- Game dev & IoT unggul
+
+Tanpa ini:
+Semua hanya ilusi skill.
+
+====================================================================
+KENYATAAN TERAKHIR
+====================================================================
+
+Secara materi, C BERAKHIR di sini.
+Tidak ada "materi C rahasia" setelah ini.
+
+Yang tersisa hanyalah:
+- pendalaman
+- pembiasaan
+- kedewasaan
+- tanggung jawab
+
+C bukan bahasa untuk semua orang.
+C adalah kontrak antara Anda dan mesin.
+
+Jika Anda siap menanggung konsekuensi,
+Anda layak menguasainya.
+
+====================================================================
+AKHIR FILE
+====================================================================
+
