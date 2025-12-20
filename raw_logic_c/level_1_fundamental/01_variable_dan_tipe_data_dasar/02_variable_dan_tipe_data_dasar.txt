@@ -1,0 +1,202 @@
+====================================================================
+RAW LOGIC C — DAILY PRACTICE GUIDE
+====================================================================
+
+------------------------------------
+-          [ RINGKASAN ]           -
+------------------------------------
+- 1. int                           -
+- 2. unsigned int                  -
+- 3. bool                          -
+- 4. char                          -
+- 5. double                        -
+- 6. float (sebaiknya double)      -
+- 7. array                         - 
+------------------------------------
+
+Tujuan file ini:
+- Menjadi PEDOMAN TUNGGAL latihan coding C harian (raw logic)
+- Mencegah kebingungan tipe data
+- Memisahkan: BELAJAR BAHASA vs LATIHAN KELINCAHAN
+- Fokus ke refleks logika & kelancaran menulis source code
+
+====================================================================
+1. PRINSIP DASAR (WAJIB PEGANG)
+====================================================================
+
+1. Raw logic harian ≠ belajar bahasa C
+2. Raw logic harian ≠ eksplorasi fitur C
+3. Raw logic harian = latihan otak, logika, dan kelincahan tangan
+4. Bahasa C SUDAH DIKUNCI sebelumnya (type system lengkap)
+5. Di latihan harian, kita pakai SUBSET MINIMAL & STABIL
+
+====================================================================
+2. TIPE DATA YANG DIPAKAI (SUBSET RESMI)
+====================================================================
+
+Tujuan:
+- Minim gangguan kognitif
+- Tidak terjebak detail bahasa
+- Cepat ditulis
+- Mudah diverifikasi
+
+--------------------------------------------------
+2.1 INTEGER (TULANG PUNGGUNG)
+--------------------------------------------------
+
+Pakai:
+- int                → default integer (90% kasus)
+- unsigned int       → counter, index, loop non-negatif
+
+Catatan:
+- Jangan campur signed & unsigned sembarangan
+- Jangan pakai long / long long di raw logic
+
+--------------------------------------------------
+2.2 BOOLEAN (LOGIKA)
+--------------------------------------------------
+
+Pakai:
+- bool (dari <stdbool.h>)
+
+Contoh:
+- kondisi
+- flag
+- state sederhana
+
+--------------------------------------------------
+2.3 CHARACTER
+--------------------------------------------------
+
+Pakai terbatas:
+- char
+
+HANYA untuk:
+- karakter tunggal
+- parsing sederhana
+- string dasar (array char)
+
+Bukan untuk:
+- arithmetic
+- binary logic
+
+--------------------------------------------------
+2.4 FLOATING POINT
+--------------------------------------------------
+
+Pakai jika perlu:
+- double
+
+Hindari:
+- float (kecuali latihan numerik khusus)
+
+--------------------------------------------------
+2.5 ARRAY
+--------------------------------------------------
+
+Boleh pakai:
+- int arr[N]
+- char str[N]
+
+Untuk:
+- traversal
+- sorting
+- searching
+- basic DP
+
+Hindari:
+- pointer arithmetic eksplisit
+- dynamic allocation
+
+====================================================================
+3. TIPE DATA YANG TIDAK DIPAKAI (SENGAJA)
+====================================================================
+
+TIDAK dipakai di raw logic harian:
+
+- long, long long
+- int8_t, uint32_t, dll
+- size_t, ptrdiff_t
+- struct, union
+- enum (kecuali latihan FSM khusus)
+- pointer eksplisit (T*)
+- restrict
+- volatile
+- _Atomic
+- concurrency
+- memory management
+
+Catatan:
+- Semua ini PENTING
+- Tapi BUKAN untuk kelincahan dasar
+
+====================================================================
+4. TEMPLATE RAW LOGIC HARIAN (REKOMENDASI)
+====================================================================
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int main(void) {
+    int n = 10;
+    bool is_even = (n % 2 == 0);
+
+    if (is_even) {
+        printf("Even\n");
+    } else {
+        printf("Odd\n");
+    }
+
+    return 0;
+}
+
+====================================================================
+5. ATURAN EMAS (INI PALING PENTING)
+====================================================================
+
+1. Jangan ganti tipe data kalau tidak perlu
+2. Jangan “sekalian belajar fitur”
+3. Jangan kejar kecanggihan
+4. Kejar:
+   - kecepatan menulis
+   - kejelasan logika
+   - minim bug
+5. Kalau logikanya sudah otomatis,
+   BARU naik level ke topik lain
+
+====================================================================
+6. PEMISAHAN JALUR (WAJIB JELAS)
+====================================================================
+
+Jalur A — BELAJAR BAHASA C (mendalam):
+- Sistem tipe lengkap
+- Pointer & memory
+- UB & optimisasi
+- Standard & compiler behavior
+
+Jalur B — RAW LOGIC HARIAN:
+- int, bool, char, double
+- if / loop / function
+- array sederhana
+- fokus logika
+
+JANGAN DICAMPUR.
+
+====================================================================
+7. KESIMPULAN AKHIR
+====================================================================
+
+Raw logic harian:
+- Bukan soal “benar atau salah tipe”
+- Tapi soal:
+  -> refleks
+  -> konsistensi
+  -> kelincahan
+
+Bahasa C sudah luas dan lengkap.
+Latihan harian harus SEMPIT dan DISIPLIN.
+
+====================================================================
+END OF FILE
+====================================================================
+
