@@ -1,0 +1,6 @@
+[ COMMAND ]
+clang -std=c17 -Wall -Wextra -Wpedantic -Werror SOURCE_CODE.c -o BINARY_EXECUTABLE
+
+[ CONTOH ]
+clang -std=c17 -Wall -Wextra -Wpedantic -Werror 02_variable_dan_tipe_data_dasar.c -o 02_variable_dan_tipe_data_dasar
+
