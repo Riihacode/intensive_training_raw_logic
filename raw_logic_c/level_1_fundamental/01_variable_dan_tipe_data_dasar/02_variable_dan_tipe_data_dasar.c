@@ -253,14 +253,22 @@ int main(void) {
   printf("char                      : %c\n", c);
   printf("signed char               : %d\n", sc);
   printf("unsigned char             : %u\n", uc);
+
   printf("short                     : %d\n", s);
   printf("unsigned short            : %u\n", us);
+
   printf("int                       : %d\n", i);
   printf("unsigned int              : %u\n", ui);
+
   printf("long                      : %ld\n", l);
   printf("unsigned long             : %lu\n", ul);
+
   printf("long long                 : %lld\n", ll);
-  printf("unsigned long long        : %llu\n\n", ull);
+  printf("unsigned long long        : %llu\n\n", ull)
+
+  printf("float                     : %d\n", f);
+  printf("double                    : %d\n", d)
+  printf("long double               : %d\n". ld);
 }
 
 /*
