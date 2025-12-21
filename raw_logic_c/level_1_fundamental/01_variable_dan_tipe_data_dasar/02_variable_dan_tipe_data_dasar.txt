@@ -14,6 +14,34 @@ RAW LOGIC C — DAILY PRACTICE GUIDE
 - 7. array                         - 
 ------------------------------------
 
+
+------------------------------------
+-          [ RINGKASAN ]           -
+------------------------------------
+
+%c   : cetak char sebagai KARAKTER (contoh: char c = 'A')
+%d   : cetak SIGNED int (dipakai untuk signed char, short, int). _Bool
+%u   : cetak UNSIGNED int (unsigned char, unsigned short, unsigned int)
+
+%ld  : cetak signed long
+%lu  : cetak unsigned long
+
+%lld : cetak signed long long
+%llu : cetak unsigned long long
+
+%f   : cetak float / double (float selalu dipromosikan ke double)
+%Lf  : cetak long double (WAJIB pakai L)
+
+%s   : cetak string (char* / char array, null-terminated)
+%p   : cetak alamat pointer (HARUS cast ke void*)
+
+%zu  : cetak size_t (hasil sizeof), size array
+%td  : cetak ptrdiff_t (selisih pointer)
+
+%%   : cetak karakter '%' literal
+
+------------------------------------
+
 Tujuan file ini:
 - Menjadi PEDOMAN TUNGGAL latihan coding C harian (raw logic)
 - Mencegah kebingungan tipe data

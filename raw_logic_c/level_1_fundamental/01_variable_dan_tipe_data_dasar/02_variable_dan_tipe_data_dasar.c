@@ -109,7 +109,7 @@ void function_without_return(void) {
  */
 
 enum Color {
-    COLOR_RED = 0,
+COLOR_RED = 0,
     COLOR_GREEN = 1,
     COLOR_BLUE = 2
 };
@@ -221,7 +221,7 @@ int32_t  i32 = -320000;
 uint32_t u32 = 320000;
 
 int64_t  i64 = -6400000000LL;
-uint64_t u64 = 6400000000ULL;
+uint64_t u64 =  6400000000ULL;
 
 /*
  * =====================================================================
@@ -249,26 +249,74 @@ int main(void) {
   printf("C type system reference loaded successfully.\n");
 
   // Integer types
-  printf("[Integer Types]");
+  printf("[Integer Types]\n");
   printf("char                      : %c\n", c);
   printf("signed char               : %d\n", sc);
-  printf("unsigned char             : %u\n", uc);
+  printf("unsigned char             : %u\n\n", uc);
 
   printf("short                     : %d\n", s);
-  printf("unsigned short            : %u\n", us);
+  printf("unsigned short            : %u\n\n", us);
 
   printf("int                       : %d\n", i);
-  printf("unsigned int              : %u\n", ui);
+  printf("unsigned int              : %u\n\n", ui);
 
   printf("long                      : %ld\n", l);
-  printf("unsigned long             : %lu\n", ul);
+  printf("unsigned long             : %lu\n\n", ul);
 
   printf("long long                 : %lld\n", ll);
-  printf("unsigned long long        : %llu\n\n", ull)
+  printf("unsigned long long        : %llu\n\n", ull);
 
-  printf("float                     : %d\n", f);
-  printf("double                    : %d\n", d)
-  printf("long double               : %d\n". ld);
+  printf("float                     : %f\n", f);
+  printf("double                    : %f\n", d);
+  printf("long double               : %Lf\n\n", ld);
+
+  printf("_Bool                     : %d\n", raw_bool);
+  printf("bool                      : %d\n\n", wrapped_bool);
+
+  printf("enum Color value          : %d\n\n", current_color);
+
+  printf("ptr_to_int                : %p\n\n", (void*)ptr_to_int);
+
+  printf("int_array (address)       : %p\n", (void*)int_array);
+  printf("int_array (size)          : %zu bytes\n", sizeof(int_array));
+  printf("int_array[0]              : %d\n", int_array[0]);
+  printf("int_array[1]              : %d\n", int_array[1]);
+  printf("int_array[2]              : %d\n\n", int_array[2]);
+
+  printf("add(2,3)                  : %d\n", add(2, 3));
+  printf("add(2,3) (address)        : %p\n\n", (void*)add);
+
+  // Aggregate
+  printf("Person.age                : %d\n", person.age);
+  printf("Person.height             : %.1f\n\n", person.height);
+
+  printf("Union Number (int)        : %d\n", number.i);
+  printf("Union Number (double)     : %f\n\n", number.d);
+
+  printf("alias ulong_t value       : %lu\n", alias_value);
+  printf("alias Person.age          : %d\n", alias_person.age);
+  printf("alias Person.height       : %f\n\n", alias_person.height);
+
+  printf("const int value           : %d\n", const_int);
+  printf("volatile int value        : %d\n", volatile_reg);
+  printf("restrict pointer          : %p\n\n", (void*)restrict_ptr);
+
+  printf("_Atomic int value         : %d\n\n", atomic_counter);
+
+  printf("int8_t                    : %d\n", i8);
+  printf("uint8_t                   : %u\n\n", u8);
+
+  printf("int16_t                   : %d\n", i16);
+  printf("uint16_t                  : %u\n\n", u16);
+
+  printf("int32_t                   : %d\n", i32);
+  printf("uint32_t                  : %u\n\n", u32);
+
+  printf("int64_t                   : %ld\n", i64);
+  printf("uint64_t                  : %lu\n\n", u64);
+
+  printf("size_t                    : %zu\n", size);
+  printf("ptrdiff_t                 : %td\n\n", diff);
 }
 
 /*
