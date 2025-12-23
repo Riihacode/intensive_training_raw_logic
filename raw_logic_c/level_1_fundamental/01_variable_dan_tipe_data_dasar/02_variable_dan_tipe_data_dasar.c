@@ -20,10 +20,10 @@
  * =====================================================================
  */
 
-#include <stdio.h>     /* printf */
-#include <stdbool.h>  /* _Bool, bool */
-#include <stdint.h>   /* fixed-width integer types */
-#include <stddef.h>   /* size_t, ptrdiff_t */
+#include <stdbool.h> /* _Bool, bool */
+#include <stddef.h>  /* size_t, ptrdiff_t */
+#include <stdint.h>  /* fixed-width integer types */
+#include <stdio.h>   /* printf */
 
 /*
  * =====================================================================
@@ -39,7 +39,7 @@
  */
 
 /* Character types (1 byte, addressable unit terkecil) */
-char c = 'A';                    /* signedness implementation-defined */
+char c = 'A'; /* signedness implementation-defined */
 signed char sc = -10;
 unsigned char uc = 250;
 
@@ -49,7 +49,7 @@ unsigned short us = 65000;
 
 /* Default integer types */
 int i = -42;
-unsigned int ui = 42; 
+unsigned int ui = 42;
 
 /* Long integer types */
 long l = 1000000L;
@@ -68,9 +68,9 @@ unsigned long long ull = -18000000000LL;
  * (IEEE-754 umum, tapi tidak dijamin oleh standar).
  */
 
-float f = 3.14f;          /* single precision */
-double d = 3.141592653589793;         /* double precision (default literal) */
-long double ld = 3.141592653589793238L;   /* extended precision */
+float f = 3.14f;                        /* single precision */
+double d = 3.141592653589793;           /* double precision (default literal) */
+long double ld = 3.141592653589793238L; /* extended precision */
 
 /*
  * =====================================================================
@@ -108,11 +108,7 @@ void function_without_return(void) {
  * Underlying type-nya adalah integer.
  */
 
-enum Color {
-COLOR_RED = 0,
-    COLOR_GREEN = 1,
-    COLOR_BLUE = 2
-};
+enum Color { COLOR_RED = 0, COLOR_GREEN = 1, COLOR_BLUE = 2 };
 
 enum Color current_color = COLOR_GREEN;
 
@@ -132,9 +128,7 @@ int *ptr_to_int = NULL;
 int int_array[10] = {1, 2, 3, 4, 5};
 
 /* Function type */
-int add(int a, int b) {
-  return a + b;
-}
+int add(int a, int b) { return a + b; }
 
 /*
  * =====================================================================
@@ -146,24 +140,19 @@ int add(int a, int b) {
 
 /* Structure type */
 struct Person {
-    int age;
-    double height;
+  int age;
+  double height;
 };
 
-struct Person person = {
-  .age = 21,
-  .height = 170.5
-};
+struct Person person = {.age = 21, .height = 170.5};
 
 /* Union type */
 union Number {
-    int i;
-    double d;
+  int i;
+  double d;
 };
 
-union Number number =  {
-  .i = 100
-};
+union Number number = {.i = 100};
 
 /*
  * =====================================================================
@@ -177,8 +166,8 @@ union Number number =  {
 typedef unsigned long ulong_t;
 typedef struct Person Person;
 
-ulong_t alias_value =  123456UL;
-Person alias_person = { .age = 30, .height = 100.0 };
+ulong_t alias_value = 123456UL;
+Person alias_person = {.age = 30, .height = 100.0};
 
 /*
  * =====================================================================
@@ -211,17 +200,17 @@ _Atomic int atomic_counter = 0;
  * - security & forensics
  */
 
-int8_t  i8 = -8;
+int8_t i8 = -8;
 uint8_t u8 = 255;
 
-int16_t  i16 = -16000;
+int16_t i16 = -16000;
 uint16_t u16 = 65000;
 
-int32_t  i32 = -320000;
+int32_t i32 = -320000;
 uint32_t u32 = 320000;
 
-int64_t  i64 = -6400000000LL;
-uint64_t u64 =  6400000000ULL;
+int64_t i64 = -6400000000LL;
+uint64_t u64 = 6400000000ULL;
 
 /*
  * =====================================================================
@@ -275,16 +264,16 @@ int main(void) {
 
   printf("enum Color value          : %d\n\n", current_color);
 
-  printf("ptr_to_int                : %p\n\n", (void*)ptr_to_int);
+  printf("ptr_to_int                : %p\n\n", (void *)ptr_to_int);
 
-  printf("int_array (address)       : %p\n", (void*)int_array);
+  printf("int_array (address)       : %p\n", (void *)int_array);
   printf("int_array (size)          : %zu bytes\n", sizeof(int_array));
   printf("int_array[0]              : %d\n", int_array[0]);
   printf("int_array[1]              : %d\n", int_array[1]);
   printf("int_array[2]              : %d\n\n", int_array[2]);
 
   printf("add(2,3)                  : %d\n", add(2, 3));
-  printf("add(2,3) (address)        : %p\n\n", (void*)add);
+  printf("add(2,3) (address)        : %p\n\n", (void *)add);
 
   // Aggregate
   printf("Person.age                : %d\n", person.age);
@@ -299,7 +288,7 @@ int main(void) {
 
   printf("const int value           : %d\n", const_int);
   printf("volatile int value        : %d\n", volatile_reg);
-  printf("restrict pointer          : %p\n\n", (void*)restrict_ptr);
+  printf("restrict pointer          : %p\n\n", (void *)restrict_ptr);
 
   printf("_Atomic int value         : %d\n\n", atomic_counter);
 
@@ -317,6 +306,9 @@ int main(void) {
 
   printf("size_t                    : %zu\n", size);
   printf("ptrdiff_t                 : %td\n\n", diff);
+
+  printf("Hello");
+  printf("Hello World");
 }
 
 /*
@@ -324,4 +316,3 @@ int main(void) {
  * AKHIR FILE
  * =====================================================================
  */
-
