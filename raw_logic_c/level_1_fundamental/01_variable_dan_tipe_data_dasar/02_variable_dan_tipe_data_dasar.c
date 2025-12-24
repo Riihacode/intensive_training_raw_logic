@@ -307,8 +307,7 @@ int main(void) {
   printf("size_t                    : %zu\n", size);
   printf("ptrdiff_t                 : %td\n\n", diff);
 
-  printf("Hello");
-  printf("Hello World");
+  printf("C type system reference loaded successfully.\n");
 }
 
 /*

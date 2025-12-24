@@ -1,0 +1,16 @@
+1. PERLU PELAJARI ULANG POINTER-POINTER pada tanda tanda *, &, **, *(), dll:
+
+/*
+====================================================================
+D. POINTER TYPES
+====================================================================
+*/
+void demo_pointer_type(void) {
+  int x = 42;
+  int *p = &x;
+  void *vp = &x;
+
+  printf("%d\n", x);
+  printf("%d\n", *p);
+  printf("%p\n", vp);
+}

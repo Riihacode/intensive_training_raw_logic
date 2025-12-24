@@ -3,7 +3,7 @@ RAW LOGIC C — DAILY PRACTICE GUIDE
 ====================================================================
 
 ------------------------------------
--          [ RINGKASAN ]           -
+-     [ RINGKASAN - GENERAL]       -
 ------------------------------------
 - 1. int                           -
 - 2. unsigned int                  -
@@ -13,6 +13,49 @@ RAW LOGIC C — DAILY PRACTICE GUIDE
 - 6. float (sebaiknya double)      -
 - 7. array                         - 
 ------------------------------------
+
+
+-----------------------------------
+-    [ RINGKASAN - DI FILE INI]   -
+-----------------------------------
+- 01. char                        -                           
+- 02. unsigned int                -
+- 03. short                       -
+- 04. unsigned short              -
+- 05. int
+- 06. unsigned int
+- 07. long
+- 08. unsigned long
+- 09. long long
+- 10. unsigned long long
+- 11. float
+- 12. double
+- 13. long double
+- 14. _Bool
+- 15. bool
+- 16. enum
+- 17. pointer
+- 18. array
+- 19. function
+- 20. struct
+- 21. union
+- 22. const
+- 23. volatile
+- 24. restrict
+- 25. _Atomic
+- 26. int8_t
+- 27. uint8_t
+- 28. int16_t
+- 29. uint16_t
+- 30. int32_t
+- 31. uint32_t
+- 32. int64_t
+- 33. uint64_t
+- 34. size_t
+- 35. ptrdiff_t
+
+------------------------------------
+
 
 
 ------------------------------------

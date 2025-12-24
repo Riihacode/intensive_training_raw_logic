@@ -1,0 +1,601 @@
+====================================================================
+C MASTER REFERENCE — TYPE SYSTEM (ISO C)
+====================================================================
+
+Tujuan:
+- Menjadi referensi tunggal tipe dalam bahasa C
+- Dipisahkan berdasarkan klasifikasi RESMI ISO C
+- Menghindari miskonsepsi umum (pemula -> advanced)
+
+Catatan penting:
+- Tidak semua keyword adalah "tipe data"
+- Beberapa adalah qualifier, derived type, atau typedef
+- Pemahaman struktur ini WAJIB untuk menjadi C engineer sejati
+
+====================================================================
+A. FUNDAMENTAL / SCALAR TYPES
+====================================================================
+
+1. Integer Types
+----------------
+- char
+- signed char
+- unsigned char
+
+- short
+- unsigned short
+
+- int
+- unsigned int
+
+- long
+- unsigned long
+
+- long long
+- unsigned long long
+
+Catatan:
+- char ≠ signed char ≠ unsigned char
+- signedness dari char bersifat implementation-defined
+
+------------------------------------------------------------
+
+2. Floating-Point Types
+-----------------------
+- float
+- double
+- long double
+
+------------------------------------------------------------
+
+3. Boolean Type
+---------------
+- _Bool              (tipe asli sejak C99)
+- bool               (macro dari <stdbool.h>)
+
+Catatan:
+- bool bukan keyword asli
+- bool biasanya didefinisikan sebagai:
+  #define bool _Bool
+
+====================================================================
+B. DERIVED TYPES (DITURUNKAN DARI TIPE LAIN)
+====================================================================
+
+4. Pointer Types
+----------------
+- T *               (pointer ke tipe T)
+- void *
+- function pointer
+
+Contoh:
+- int *p;
+- void *vp;
+- int (*fp)(int, int);
+
+Catatan:
+- Pointer adalah tipe mandiri
+- Pointer arithmetic tergantung tipe dasar
+
+------------------------------------------------------------
+
+5. Array Types
+--------------
+- T array[N]
+
+Contoh:
+- int a[10];
+- char buf[256];
+
+Catatan:
+- Array ≠ pointer
+- Array tidak bisa di-assign
+- Array decay ke pointer dalam parameter fungsi
+
+------------------------------------------------------------
+
+6. Function Types
+-----------------
+- T func(params)
+- function pointer
+
+Catatan:
+- Function bukan object
+- Tidak bisa disimpan langsung (harus via pointer)
+
+====================================================================
+C. USER-DEFINED TYPES
+====================================================================
+
+7. struct
+---------
+- struct adalah kumpulan field dengan layout berurutan
+
+Contoh:
+- struct Point { int x; int y; };
+
+------------------------------------------------------------
+
+8. union
+--------
+- Semua member berbagi lokasi memory yang sama
+
+Contoh:
+- union Data { int i; float f; };
+
+------------------------------------------------------------
+
+9. enum
+-------
+- enum adalah kumpulan konstanta integer
+
+Contoh:
+- enum Color { RED, GREEN, BLUE };
+
+Catatan:
+- Secara teknis disimpan sebagai int (minimal)
+
+====================================================================
+D. TYPE QUALIFIERS (BUKAN TIPE BARU)
+====================================================================
+
+10. const
+---------
+- Menjadikan object read-only
+
+------------------------------------------------------------
+
+11. volatile
+------------
+- Melarang optimisasi tertentu oleh compiler
+
+------------------------------------------------------------
+
+12. restrict
+------------
+- Menjamin tidak ada aliasing pointer
+
+------------------------------------------------------------
+
+13. _Atomic
+-----------
+- Mendukung operasi atomik (concurrency)
+
+Catatan:
+- Qualifier mengubah perilaku tipe, bukan menciptakan tipe baru
+
+====================================================================
+E. FIXED-WIDTH INTEGER TYPES (<stdint.h>)
+====================================================================
+
+14. Fixed-size signed integers
+------------------------------
+- int8_t
+- int16_t
+- int32_t
+- int64_t
+
+------------------------------------------------------------
+
+15. Fixed-size unsigned integers
+--------------------------------
+- uint8_t
+- uint16_t
+- uint32_t
+- uint64_t
+
+Catatan:
+- Ini adalah typedef, bukan keyword
+- Digunakan untuk portability & binary compatibility
+
+====================================================================
+F. SIZE & POINTER ARITHMETIC TYPES
+====================================================================
+
+16. size_t
+----------
+- Digunakan untuk ukuran object & array
+- Selalu unsigned
+
+------------------------------------------------------------
+
+17. ptrdiff_t
+-------------
+- Hasil pengurangan dua pointer
+- Selalu signed
+
+====================================================================
+G. SPECIAL & ADVANCED TYPES (WAJIB UNTUK MASTER C)
+====================================================================
+
+18. void
+--------
+- Menyatakan "tidak ada nilai"
+- Digunakan untuk function tanpa return
+
+------------------------------------------------------------
+
+19. void *
+---------
+- Generic pointer
+- Tulang punggung API C
+
+------------------------------------------------------------
+
+20. signed / unsigned
+---------------------
+- Modifier untuk integer type
+
+------------------------------------------------------------
+
+21. Complex Number Types (C99)
+------------------------------
+- float _Complex
+- double _Complex
+- long double _Complex
+
+Catatan:
+- Jarang digunakan, tapi resmi ISO C
+
+------------------------------------------------------------
+
+22. Atomic Types (<stdatomic.h>)
+--------------------------------
+- atomic_int
+- atomic_bool
+- atomic_uint
+- dll.
+
+Digunakan untuk:
+- concurrency
+- lock-free programming
+
+====================================================================
+KESIMPULAN
+====================================================================
+
+- Tidak semua yang terlihat seperti "tipe" adalah tipe data
+- Pemisahan konsep sangat penting:
+  * fundamental type
+  * derived type
+  * qualifier
+  * typedef
+- Master C berarti:
+  * paham memory model
+  * paham lifetime
+  * paham Undefined Behavior
+  * paham ABI & optimisasi compiler
+
+====================================================================
+END OF FILE
+====================================================================
+
+
+====================================================================
+C PRINTF FORMAT SPECIFIER — MASTER REFERENCE
+====================================================================
+
+Tujuan:
+- Referensi resmi penggunaan format specifier printf
+- Mencegah Undefined Behavior (UB)
+- Berlaku untuk ISO C (C11/C17/C23)
+
+CATATAN PENTING (WAJIB DIBACA):
+- printf TIDAK melakukan type checking
+- Salah format specifier = Undefined Behavior
+- Promotion rules berlaku (integer promotion, float promotion)
+
+====================================================================
+A. CHARACTER TYPES
+====================================================================
+
+char
+----
+%c  -> menampilkan sebagai karakter
+%d  -> menampilkan nilai numerik (setelah promotion)
+
+signed char
+-----------
+%d  -> promoted ke int
+
+unsigned char
+-------------
+%u  -> promoted ke unsigned int
+
+====================================================================
+B. INTEGER TYPES
+====================================================================
+
+short
+-----
+%d  -> dipromosikan ke int
+
+unsigned short
+--------------
+%u  -> dipromosikan ke unsigned int
+
+int
+---
+%d  -> signed decimal
+%i  -> signed decimal (scanf beda, printf sama)
+
+unsigned int
+------------
+%u  -> unsigned decimal
+%x  -> hexadecimal
+%o  -> octal
+
+long
+----
+%ld -> signed long
+
+unsigned long
+-------------
+%lu -> unsigned long
+
+long long
+---------
+%lld -> signed long long
+
+unsigned long long
+------------------
+%llu -> unsigned long long
+
+====================================================================
+C. FLOATING POINT TYPES
+====================================================================
+
+float
+-----
+%f  -> float DIPROMOSIKAN ke double
+
+double
+------
+%f  -> default decimal
+%e  -> scientific notation
+%g  -> shortest representation
+
+long double
+-----------
+%Lf -> long double
+
+CATATAN:
+- Tidak ada %f untuk float khusus
+- Semua float -> double di printf
+
+====================================================================
+D. BOOLEAN TYPE
+====================================================================
+
+_Bool
+-----
+%d  -> nilai 0 atau 1
+
+bool
+----
+%d  -> macro dari _Bool
+
+====================================================================
+E. POINTER TYPES
+====================================================================
+
+Semua pointer (T*)
+------------------
+%p  -> address (WAJIB cast ke void*)
+
+Contoh:
+printf("%p\n", (void*)ptr);
+
+CATATAN:
+- %p adalah SATU-SATUNYA format legal untuk pointer
+
+====================================================================
+F. ARRAY TYPES
+====================================================================
+
+Array
+-----
+- Array tidak dicetak langsung
+- Gunakan loop + format sesuai tipe elemen
+
+Contoh:
+int a[5];
+printf("%d", a[i]);
+
+====================================================================
+G. FUNCTION POINTER
+====================================================================
+
+Function pointer
+----------------
+%p -> alamat fungsi (cast ke void*)
+
+Contoh:
+printf("%p\n", (void*)func_ptr);
+
+====================================================================
+H. STRUCT & UNION
+====================================================================
+
+struct
+------
+- Tidak bisa dicetak langsung
+- Cetak field satu per satu
+
+Contoh:
+printf("%d %f\n", s.x, s.y);
+
+union
+-----
+- Sama seperti struct
+- Cetak member yang AKTIF
+
+====================================================================
+I. ENUM
+====================================================================
+
+enum
+----
+%d -> enum diperlakukan sebagai int
+
+====================================================================
+J. TYPE QUALIFIERS
+====================================================================
+
+const
+volatile
+restrict
+_Atomic
+--------
+- TIDAK mempengaruhi format specifier
+- Format mengikuti tipe dasarnya
+
+Contoh:
+const int x;
+printf("%d", x);
+
+====================================================================
+K. FIXED-WIDTH INTEGER TYPES (<stdint.h>)
+====================================================================
+
+int8_t
+------
+PRId8  (dari <inttypes.h>)
+atau
+%d    (jika yakin int8_t == signed char)
+
+uint8_t
+-------
+PRIu8
+atau
+%u
+
+int16_t
+-------
+PRId16
+
+uint16_t
+--------
+PRIu16
+
+int32_t
+-------
+PRId32
+
+uint32_t
+--------
+PRIu32
+
+int64_t
+-------
+PRId64
+
+uint64_t
+--------
+PRIu64
+
+CATATAN PENTING:
+- Gunakan <inttypes.h> untuk PORTABILITY
+- Jangan asumsi ukuran tipe
+
+====================================================================
+L. SIZE & POINTER DIFFERENCE TYPES
+====================================================================
+
+size_t
+------
+%zu -> WAJIB
+
+ptrdiff_t
+---------
+%td -> WAJIB
+
+====================================================================
+M. VOID TYPE
+====================================================================
+
+void
+----
+- Tidak bisa dicetak
+
+void *
+------
+%p -> cast ke (void*)
+
+====================================================================
+N. ATOMIC TYPES (<stdatomic.h>)
+====================================================================
+
+atomic_int
+----------
+%d -> setelah atomic_load()
+
+Contoh:
+printf("%d", atomic_load(&x));
+
+====================================================================
+O. COMPLEX TYPES (C99)
+====================================================================
+
+float _Complex
+--------------
+%f + crealf()
+
+double _Complex
+---------------
+%f + creal()
+
+long double _Complex
+--------------------
+%Lf + creall()
+
+====================================================================
+RINGKASAN FORMAT PALING PENTING
+====================================================================
+
+%d   -> int, short, char (signed)
+%u   -> unsigned int, unsigned short, unsigned char
+%ld  -> long
+%lu  -> unsigned long
+%lld -> long long
+%llu -> unsigned long long
+%f   -> float, double
+%Lf  -> long double
+%c   -> char
+%p   -> pointer
+%zu  -> size_t
+%td  -> ptrdiff_t
+
+====================================================================
+KESALAHAN FATAL (UB)
+====================================================================
+
+- printf("%d", long);
+- printf("%f", float*) ;
+- printf("%d", size_t);
+- printf("%u", int64_t);
+
+SEMUA DI ATAS = UNDEFINED BEHAVIOR
+
+====================================================================
+END OF FILE
+====================================================================
+
+
+SINGKATAN-SINGKATAN =
+d = decimal
+u = unsigned
+f = floating
+c = character
+s = string
+p = pointer
+x = hex
+o = octal
+
+h  = short
+l  = long
+ll = long long
+L  = long double
+z  = size_t
+t  = ptrdiff_t
+
