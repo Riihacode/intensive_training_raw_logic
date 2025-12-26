@@ -54,7 +54,7 @@ RAW LOGIC C — DAILY PRACTICE GUIDE
 - 34. size_t
 - 35. ptrdiff_t
 
-------------------------------------
+-----------------------------------
 
 
 
@@ -63,11 +63,14 @@ RAW LOGIC C — DAILY PRACTICE GUIDE
 ------------------------------------
 
 %c   : cetak char sebagai KARAKTER (contoh: char c = 'A')
-%d   : cetak SIGNED int (dipakai untuk signed char, short, int). _Bool
+%d   : cetak SIGNED int (dipakai untuk signed char, short, int). _Bool, atomic_int
 %u   : cetak UNSIGNED int (unsigned char, unsigned short, unsigned int)
 
 %ld  : cetak signed long
 %lu  : cetak unsigned long
+
+%lf  : 
+%02X : 
 
 %lld : cetak signed long long
 %llu : cetak unsigned long long
