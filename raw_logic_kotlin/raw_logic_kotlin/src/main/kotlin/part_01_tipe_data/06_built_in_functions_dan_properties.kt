@@ -24,9 +24,11 @@ fun main() {
   println(anotherScoreInt.toDouble())
 
   println("=============================")
+  println("Bulit-in Properties = ")
   var anotherName: String = "namaku"
   println(anotherName.length)
 
+  println("Gabungan Built-In functions + Built-In Properties = ")
   var anotherNameFunctionsAndProperties: String = "Anaya"
   println("Namanya adalah ${anotherNameFunctionsAndProperties.uppercase()} yang berjumlah ${anotherNameFunctionsAndProperties.length} karakter huruf")
 

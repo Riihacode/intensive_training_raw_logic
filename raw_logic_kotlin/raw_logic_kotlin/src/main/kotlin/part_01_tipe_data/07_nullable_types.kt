@@ -1,6 +1,12 @@
 package com.example.part_01_tipe_data
 
 fun main() {
+  /**
+   * VERSI NULL POINTER EXCEPTION
+   */
+  //val namaKu: String = null
+  //println(namaku)
+
   // SAFE CALLS OPERATOR
   println("================================")
   val judul: String = "Belajar Kotlin" 
@@ -18,4 +24,14 @@ fun main() {
   var noteBuku: String? = null
   var panjangNoteBuku: Int? = noteBuku?.length ?: 0
   println("Buku berjudul \"$judul2\", memiliki panjang Note Buku yaitu $panjangNoteBuku")
+
+  /*
+   * JANGAN PAKAI INI
+   * BERESIKO NULL POINTER EXCEPTION
+   */
+  val nameAssertionNoError: String? = "welcome"
+  println(nameAssertionNoError!!.length)
+
+  val nameAssertionError: String? = null
+  println(nameAssertionError!!.length)    // Null Pointer Exception``
 }
