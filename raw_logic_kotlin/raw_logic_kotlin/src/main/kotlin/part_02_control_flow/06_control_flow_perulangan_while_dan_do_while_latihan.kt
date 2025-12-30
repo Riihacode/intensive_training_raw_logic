@@ -17,34 +17,68 @@ class Test {
         kotlin.io.println(input)
     }
     
+    /*
     fun main() {
         var stockMinuman: Int = 10
         var isEmpty: Boolean = false
         
         do {
           while(stockMinuman >= 0) {
-            println("\nMemeriksa sistem...")
+            //println("\nMemeriksa sistem...")
             checkHasil(stockMinuman) 
 
             if (stockMinuman == 0) {
-              println("Stok habis $stockMinuman. Mesin berhenti beroperasi")
+              //println("Stok habis. Mesin berhenti beroperasi.")
               isEmpty = true
-            } else if (stockMinuman > 0) {  
-              println("Stok Minuman: $stockMinuman")
-              println("Mengeluarkan 1 minuman...\n")
-            } else {
-              println("Unknown")
+            } 
+            //else if (stockMinuman > 0) 
+            else {  
+              //println("Stok Minuman: $stockMinuman")
+              //println("Mengeluarkan 1 minuman...\n")
             }
+            //} else {
+              ///println("Unknown")
+            //}
 
             stockMinuman--
           }
-         
-          //isEmpty = true
         } while(!isEmpty)
 
         // Kode ini digunakan untuk mengecek hasil dari kode yang Anda buat
-        //checkHasil(stockMinuman) // Hanya hapus kode ini jika kamu menggunakan Kotlin Playground
+        checkHasil(stockMinuman) // Hanya hapus kode ini jika kamu menggunakan Kotlin Playground
     }
+    */
+    fun main() {
+        var stockMinuman: Int = 10
+        var currentStock: Int = stockMinuman
+        var isEmpty: Boolean = false
+
+        val output = StringBuilder()
+
+        do {
+            while (stockMinuman >= 0) {
+
+                output.append("Memeriksa sistem...\n")
+
+                if (stockMinuman == 0) {
+                    output.append("Stok habis. Mesin berhenti beroperasi.\n")
+                    isEmpty = true
+                } else {
+                    output.append("Stok minuman: $stockMinuman\n")
+                    output.append("Mengeluarkan 1 minuman...\n\n")
+                }
+
+                stockMinuman--
+            }
+        } while (!isEmpty)
+
+        // CETAK SEKALI SAJA → struktur sesuai test
+        println(output.toString())
+
+        // cek hasil (tester pakai ini)
+        checkHasil(currentStock)
+    }
+
     
     fun expectedOutput() {
         for (output in listExpectedOutput) {
