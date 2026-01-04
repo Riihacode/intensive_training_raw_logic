@@ -1,43 +1,76 @@
 package com.example.part_02_control_flow
 
+/*
+ * NOTE
+ * Belum selesai dipelajari
+ * Karena ada ambiguitas yang belum jelas terpecahkan
+ */
+
+
 fun main() {
   /*
    *  range
    */
   val rangeTest: IntRange = 1..10
-  println(rangeTest)
+  println("rangeTest            = $rangeTest")
 
   /*
    *  rangeTo
    */
   val rangeToTest: IntRange = 5.rangeTo(15)
-  println(rangeToTest)
+  println("rangeToTest          = $rangeToTest")
 
   /*
    *  rangeDown
    *  ada output bernama `step`
    */
   val rangeDownTest: IntProgression = 20.downTo(5)
-  println(rangeDownTest)
+  println("rangeDownTest        = $rangeDownTest")
 
+
+  println("\n [CHECK TESTING]")
+  if (1 in rangeTest) {
+    println("rangeTest          = 1 ada di jarak antara $rangeTest") 
+  } else {
+    println("rangeTest          = 1 tidak ada di jarak antara $rangeTest")
+  }
+
+  if (5 in rangeToTest) {
+    println("5 ada di jarak antara $rangeToTest") 
+  } else {
+    println("5 tidak ada di jarak antara $rangeToTest")
+  } 
 
   println("=========================================")
   /**
    *  step
    */
   val rangeStepTest: IntProgression = 1..10 step 2
-  println(rangeStepTest)
+  println("rangeStepTest        = $rangeStepTest")
 
   val downToStepTest: IntProgression = 20.downTo(5).step(2)
-  println(downToStepTest)
+  println("downToStepTest       = $downToStepTest")
 
 
+  println("\n [CHECK TESTING]")
+  if (10 in rangeStepTest) {
+    println("rangeStepTest      = nomor 10 ada di jarak $rangeStepTest")
+  } else {
+    println("rangeStepTest      = nomor 10 tidak ada di jarak $rangeStepTest")
+  }
+
+  if (5 in downToStepTest) {
+    println("downToStepTest      = nomor 5 ada di jarak $downToStepTest")
+  } else {
+    println("downToStepTest      = nomor 5 tidak ada di jarak $downToStepTest")
+  }
 
   println("=========================================")
   /**
    *  in
    */
   val rangeInTestPart1: IntProgression = 1..10 step 3
+  print("rangeInTestPart1       = ")
   if  (7 in rangeInTestPart1) {
     println("Nomor 7 ada di rangeInTestPar1")
   } else {
@@ -45,13 +78,16 @@ fun main() {
   }
 
   val rangeInTestPart2: IntProgression = 1..10 step 2
+  print("rangeInTestPart2       = ")
   if  (7 in rangeInTestPart2) {
     println("Nomor 7 ada di rangeInTestPart2")
   } else {
     println("Nomor 7 tidak ada di rangeInTestPart2")
   }
 
+  println()
   val rangeToInTestPart1: IntProgression = 1.rangeTo(10) step 4
+  print("rangeToInTestPart1     = ")
   if  (7 in rangeToInTestPart1) {
     println("7 ada di rentang rangeToInTestPart1 secara increment")
   } else {
@@ -59,13 +95,16 @@ fun main() {
   }
 
   val rangeToInTestPart2: IntProgression = 1.rangeTo(10) step 3
+  print("rangeToInTestPart2     = ")
   if(7 in rangeToInTestPart2) {
     println("7 ada di rentang rangeToInTestPart2 secara increment")
   } else {
     println("7 tidak ada di rentang rangeToInTestPart2 secara increment")
   }
 
+  println()
   val rangeDownToInTestPart1: IntProgression = 20.downTo(5) step 2
+  print("rangeDownToInTestPart1 = ")
   if (7 in rangeDownToInTestPart1) {
     println("7 ada di rentang rangeDownToInTestPart1 secara decrement") 
   } else {
@@ -73,6 +112,7 @@ fun main() {
   }
 
   val rangeDownToInTestPart2: IntProgression = 20.downTo(5) step 3
+  print("rangeDownToInTestPart2 = ")
   if (7 in rangeDownToInTestPart2) {
     println("7 ada di rentang rangeDownToInTestPart2")
   } else {
@@ -80,10 +120,11 @@ fun main() {
   }
 
   val rangeDownToInTestPart3: IntProgression = 20.downTo(5) step 1
+  print("rangeDownToInTestPart3 = ")
   if (7 in rangeDownToInTestPart3) {
-    println("7 ada di rentang rangeDownToInTestPart2")
+    println("7 ada di rentang rangeDownToInTestPart3")
   } else {
-    println("7 tidak ada di rentang rangeDownToInTestPart2")
+    println("7 tidak ada di rentang rangeDownToInTestPart3")
   }
 
 
@@ -92,6 +133,7 @@ fun main() {
    *  in dengan operator logika
    */
   val rangeInNotTestPart1: IntProgression = 1..10 step 2
+  print("rangeInNotTestPart1    = ")
   if(7 !in rangeInNotTestPart1) {
     println("7 tidak ada di antara 1 .. 10")
   } else {  
@@ -99,6 +141,7 @@ fun main() {
   }
 
   val rangeToInNotTestPart1: IntProgression = 1.rangeTo(10) step 2
+  print("rangeToInNotTestPart1  = ")
   if (7 !in rangeToInNotTestPart1) {
     println("7 tidak ada di antara 1 .. 10 dengan step 2")
   } else {
@@ -106,6 +149,7 @@ fun main() {
   }
  
   val rangeToInNotTestPart2: IntProgression = 1.rangeTo(10) step 3
+  print("rangeToInNotTestPart2  = ")
   if (7 !in rangeToInNotTestPart2) {
     println("7 tidak ada di antara 1 .. 10 dengan step 3")
   } else {
