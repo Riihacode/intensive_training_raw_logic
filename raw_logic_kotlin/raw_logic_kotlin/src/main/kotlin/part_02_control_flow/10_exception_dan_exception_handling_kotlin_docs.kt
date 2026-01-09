@@ -12,10 +12,24 @@ fun main() {
    *    throw IllegalArgumentException()
    */
   //throw IllegalArgumentException()
-  val userInput: Int = -1
+  
+  /*val userInput: Int = -1
   //val cause: String = IllegalArgumentException("Original cause: illegal state")
   val cause: IllegalArgumentException = IllegalArgumentException("Original cause: illegal state")
   if(userInput < 1) {
     throw IllegalArgumentException("Input must be non negative", cause)
+  }*/
+
+  val myList: MutableList<Int> = mutableListOf(1, 2, 3)
+  try {
+    val result: Int = myList.removeAt(4)
+    println("[RESULT] hasil melakukan remove pada index ke 3 adalah = $result")
+  } catch (e: IndexOutOfBoundsException) {
+    println("[ERROR] detail = $e")
+  } finally {
+    //println("[UNKNOWN-ERROR] sepertinya error yang lain")
+    println("[FINALLY] clean up process ... ")
   }
+
+  println("[NO-ERROR] Proses selanjutnya akan dieksekusi ... ")
 }
