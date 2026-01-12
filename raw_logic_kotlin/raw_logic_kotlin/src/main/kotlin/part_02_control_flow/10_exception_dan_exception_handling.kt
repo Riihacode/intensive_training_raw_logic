@@ -3,7 +3,9 @@ package com.example.part_02_control_flow
 fun main() {
   /*
    *  EXCEPTION HANDLING
-   *  untuk atasi program error tidak berhenti mendadak
+   *  1. Untuk atasi program error tidak berhenti mendadak
+   *  2. [IMPORTANT] Jika ada catch yang dideklarasikan yang tepat dengan error yang akan terjadi maka line program di bawahnya akan tetap dieksekusi
+   *  3. [IMPORTANT] Jika ada catch yang dideklarasikan dan tidak ada yang tepat maka line program di bawahnya tidak akan dieksekusi
    */
 
   println("===========================================")
@@ -73,10 +75,9 @@ fun main() {
     println("Error NullPointerException pada valueXFinallyB karena originalnya adalah 11.0. Error: $e")
   } catch (e: ArithmeticException) {
     println("Error ArithmeticException woy!! Error = $e")
-  } catch (e: NumberFormatException) {
+  } /*catch (e: NumberFormatException) {
     println("[BENAR] Tebakan coding manual anda sebelum compile telah benar. Error = $e")
-  } 
-  finally {
+  }*/ finally {
     println("[Multi Catch Finally] Program logout dan membersihkan memory")   // akan berhenti di sini karena crash-nya ada di sini
   }
 

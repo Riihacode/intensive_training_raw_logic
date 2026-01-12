@@ -20,9 +20,10 @@ fun main() {
     throw IllegalArgumentException("Input must be non negative", cause)
   }*/
 
+  /*
   val myList: MutableList<Int> = mutableListOf(1, 2, 3)
   try {
-    val result: Int = myList.removeAt(4)
+    val result: Int = myList.removeAt(3)
     println("[RESULT] hasil melakukan remove pada index ke 3 adalah = $result")
   } catch (e: IndexOutOfBoundsException) {
     println("[ERROR] detail = $e")
@@ -32,4 +33,11 @@ fun main() {
   }
 
   println("[NO-ERROR] Proses selanjutnya akan dieksekusi ... ")
+  */
+  
+  println("======================================")
+  // NoSuchElementException
+  val emptyList: List<Int> = listOf<Int>()
+  val firstElement: Int = emptyList.first()
+  println(firstElement)
 }
